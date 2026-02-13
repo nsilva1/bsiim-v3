@@ -65,13 +65,13 @@ export default function About() {
             <div>
               <h3 className="text-xl font-bold text-foreground mb-4">Our Mission</h3>
               <p className="text-muted-foreground">
-                To elevate knowledge, awareness, and income levels across communities by demonstrating how wealth is created through self-development. Our vision is to raise disciplined, self-reliant, and productive citizens who contribute meaningfully to job creation, financial inclusion, education, and entrepreneurship while building prosperous nations.
+                To provide an excellent and the most effective and efficient services and products based on membership using models, program, solutions and the platform. To accelerate business performance, motivates investment and encourage high level circular flow of money through an income program. To empower individuals to become self-reliant through hard-work and leveraging on the available resources in order to enable them to satisfy and exceed their basic necessities (food security, shelter and finances) and to increase productivity. To position the company so that it will solve all problems related to business and provide products and services that will accelerate business turn-over through marketing solution. To support government economic policies through developing human resources (JS- Resource Model), training entrepreneurs to leverage on those managerial skills and technical skills in order to manage other resources for national and global growth.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground mb-4">Our Vision</h3>
               <p className="text-muted-foreground">
-                To be the most trusted consulting partner for organizations seeking transformational change and strategic excellence in their industry.
+                To become a global phenomenon in business solution, entrepreneurial solution, empowerment solution, education model, and marketing model (BEEEM) that will stand for a long valued, solid, and strong consistent inspired innovations. That will help individuals and organizations achieve their dreams and goals very easy, fast and really simple. To use our initiated programs/ models/ solutions to raise the level of knowledge, awareness, to increase income level and show citizens how wealth is created through self-development, how companies improve through staff development and pool marketing, which is the major challenge facing our human capital development in Nigeria today. To make sure Members and teams will be sure of full control of themselves, time, income, resources for self-mastery and help them become more discipline, self-reliance, patriotic, and productive to contribute in job creation, financial inclusion, business success, education solution, and be empowered to become entrepreneur, and leaders who can build their nation.
               </p>
             </div>
           </div>

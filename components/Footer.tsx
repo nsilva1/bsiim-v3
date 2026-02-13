@@ -33,8 +33,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li><a href="tel:+1234567890" className="text-sm text-muted-foreground hover:text-accent transition-colors">(123) 456-7890</a></li>
-              <li><a href="mailto:hello@consultlab.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">info@bsiimplatform.com</a></li>
+              <li><a href="tel:+2348175637632" className="text-sm text-muted-foreground hover:text-accent transition-colors">+2348175637632</a></li>
+              <li><a href="mailto:info@bsiimplatform.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">info@bsiimplatform.com</a></li>
             </ul>
           </div>
 

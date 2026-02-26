@@ -12,7 +12,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-lg font-bold text-foreground mb-4">
-                <Image src={logo} alt='BSIIM Logo' width={100} height={100} className='bg-transparent' />
+              <Image src={logo} alt='BSIIM Logo' width={100} height={100} className='bg-transparent' />
             </h3>
             <p className="text-sm text-muted-foreground">
               Strategic consulting solutions to transform your business and drive growth.
@@ -23,9 +23,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/services" className="text-sm text-muted-foreground hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/events" className="text-sm text-muted-foreground hover:text-accent transition-colors">Events</Link></li>
-              <li><Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">About</Link></li>
+              <li><Link href="/services" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">Services</Link></li>
+              <li><Link href="/events" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">Events</Link></li>
+              <li><Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">About</Link></li>
             </ul>
           </div>
 
@@ -33,8 +33,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li><a href="tel:+2348175637632" className="text-sm text-muted-foreground hover:text-accent transition-colors">+2348175637632</a></li>
-              <li><a href="mailto:info@bsiimplatform.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">info@bsiimplatform.com</a></li>
+              <li><a href="tel:+2348175637632" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">+2348175637632</a></li>
+              <li><a href="mailto:info@bsiimplatform.com" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">info@bsiimplatform.com</a></li>
             </ul>
           </div>
 
@@ -42,16 +42,16 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Follow Us</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Twitter</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Email</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">LinkedIn</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">Twitter</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors font-bold">Email</a></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            © {currentYear} BSIIM. All rights reserved.
+            © {currentYear} Amethyst International. All rights reserved.
           </p>
         </div>
       </div>

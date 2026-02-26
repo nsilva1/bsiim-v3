@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react'
+import ReactCountryFlag from "react-country-flag"
+import { upcomingEvents } from '@/data/events'
 
 export const metadata = {
   title: 'Events & Workshops | Consulting Events',
@@ -9,83 +11,22 @@ export const metadata = {
 }
 
 export default function Events() {
-  const upcomingEvents = [
+  const pastEvents = [
     {
-      id: 1,
-      title: 'Digital Transformation Webinar',
-      date: 'March 15, 2024',
-      time: '2:00 PM - 3:30 PM EST',
-      location: 'Online',
-      description: 'Learn strategies for successful digital transformation in today\'s rapidly changing business environment.',
-      attendees: 250,
-      type: 'Webinar',
-    },
-    {
-      id: 2,
-      title: 'Leadership Strategy Workshop',
-      date: 'March 22, 2024',
-      time: '9:00 AM - 5:00 PM EST',
-      location: 'New York Office',
-      description: 'Interactive workshop on developing effective leadership strategies for organizational growth.',
-      attendees: 50,
-      type: 'In-Person',
-    },
-    {
-      id: 3,
-      title: 'Operations Excellence Summit',
-      date: 'April 5, 2024',
-      time: '10:00 AM - 4:00 PM EST',
-      location: 'San Francisco Office',
-      description: 'Annual summit bringing together industry leaders to discuss operations best practices.',
+      id: 7,
+      title: 'GSSIC Nigeria',
+      countryCode: 'NG',
+      date: 'March 8, 2025',
       attendees: 200,
       type: 'In-Person',
     },
     {
-      id: 4,
-      title: 'AI & Innovation in Business',
-      date: 'April 18, 2024',
-      time: '1:00 PM - 2:30 PM EST',
-      location: 'Online',
-      description: 'Explore how artificial intelligence is transforming business models and driving competitive advantage.',
-      attendees: 300,
-      type: 'Webinar',
-    },
-    {
-      id: 5,
-      title: 'Finance Strategy Intensive',
-      date: 'May 1, 2024',
-      time: '9:00 AM - 5:00 PM EST',
-      location: 'Chicago Office',
-      description: 'Deep dive into financial planning, capital allocation, and value creation strategies.',
-      attendees: 75,
-      type: 'In-Person',
-    },
-    {
-      id: 6,
-      title: 'Organizational Transformation Panel',
-      date: 'May 15, 2024',
-      time: '3:00 PM - 4:30 PM EST',
-      location: 'Online',
-      description: 'Panel discussion with leading executives on managing organizational change and transformation.',
-      attendees: 400,
-      type: 'Webinar',
-    },
-  ]
-
-  const pastEvents = [
-    {
-      id: 7,
-      title: 'Strategic Planning Summit 2023',
-      date: 'December 8, 2023',
-      attendees: 500,
-      type: 'In-Person',
-    },
-    {
       id: 8,
-      title: 'Growth Strategies Webinar',
-      date: 'November 15, 2023',
-      attendees: 350,
-      type: 'Webinar',
+      title: 'GSSIC Ghana',
+      countryCode: 'GH',
+      date: 'April 15, 2025',
+      attendees: 200,
+      type: 'In-Person',
     },
   ]
 
@@ -122,7 +63,17 @@ export default function Events() {
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent w-fit">
                     {event.type}
                   </span>
-                  <CardTitle className="text-lg mt-2">{event.title}</CardTitle>
+                  <CardTitle className="text-lg mt-2 flex items-center gap-2">
+                    <ReactCountryFlag
+                      countryCode={event.countryCode}
+                      svg
+                      style={{
+                        width: '1.5em',
+                        height: '1.5em',
+                      }}
+                    />
+                    {event.title}
+                  </CardTitle>
                 </CardHeader>
 
                 {/* Event Content */}
@@ -150,7 +101,7 @@ export default function Events() {
                   <p className="text-muted-foreground text-sm mb-6">{event.description}</p>
 
                   <Button asChild className="bg-accent hover:bg-accent/90">
-                    <Link href="/contact">
+                    <Link href="/events/register">
                       Register & RSVP
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -177,7 +128,17 @@ export default function Events() {
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-muted text-muted-foreground w-fit mb-2">
                     {event.type}
                   </span>
-                  <CardTitle className="text-lg">{event.title}</CardTitle>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    {event.title}
+                    <ReactCountryFlag
+                      countryCode={event.countryCode}
+                      svg
+                      style={{
+                        width: '1.5em',
+                        height: '1.5em',
+                      }}
+                    />
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">

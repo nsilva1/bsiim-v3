@@ -1,198 +1,164 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowRight } from 'lucide-react'
-import { values } from '@/lib/constants'
-import Image from 'next/image'
-import aboutBSIIM from '@/assets/consultant-2.jpg'
+import {
+  ShieldCheck,
+  BookOpen,
+  Briefcase,
+  TrendingUp,
+  Users,
+  Globe,
+  Target,
+  Award
+} from 'lucide-react';
 
 export const metadata = {
-  title: 'About ConsultLab | Our Mission & Team',
-  description: 'Learn about our consulting firm, mission, values, and the team of experts dedicated to transforming your business.',
+  title: 'About Us | Amethyst International BSIIM Ltd',
+  description: 'Learn about our mission, vision, and core models designed to cultivate visionary leaders and empower individuals through knowledge and intelligent investment.',
 }
 
-export default function About() {
-  
+const AboutUs = () => {
+  const coreSpecialties = [
+    { title: "Security & Intelligence", icon: <ShieldCheck className="w-6 h-6" />, desc: "Global expertise in safety, intelligence, HUINT, and security consciousness." },
+    { title: "Transformative Education", icon: <BookOpen className="w-6 h-6" />, desc: "Innovative career advancement and human capital development programs." },
+    { title: "Business Consultancy", icon: <Briefcase className="w-6 h-6" />, desc: "Strategic operations design and institutional capacity building." },
+    { title: "Wealth Empowerment", icon: <TrendingUp className="w-6 h-6" />, desc: "Sustainable financial solutions through our proprietary BSIIM framework." }
+  ];
 
-  
+  const values = [
+    { name: "Integrity", text: "Upholding honesty and transparency in all dealings." },
+    { name: "Excellence", text: "Delivering world-class performance in every service." },
+    { name: "Innovation", text: "Pioneering creative, intelligent, and adaptable solutions." },
+    { name: "Empowerment", text: "Building capacity and confidence through education." }
+  ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-
+    <div className="bg-white text-slate-900 font-sans leading-relaxed">
       {/* Hero Section */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-secondary">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-              About BSIIM
-            </h1>
-            <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              Transforming businesses through strategic consulting and expert guidance
+      <section className="relative bg-slate-950 py-24 px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h1 className="text-indigo-400 font-bold tracking-widest uppercase text-sm mb-4">
+            Amethyst International BSIIM Ltd
+          </h1>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+            Building Intelligent People for a <span className="text-indigo-500">Prosperous Society</span>
+          </h2>
+          <p className="text-xl text-slate-300 max-w-3xl mb-8">
+            A dynamic platform merging enterprise, empowerment, and ethical investment to transform individual potential into sustainable prosperity.
+          </p>
+
+        </div>
+        {/* Abstract Background Element */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-600/10 blur-3xl rounded-full -mr-20 -mt-20"></div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-20 px-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 className="text-3xl font-bold mb-6 text-slate-900">Who We Are</h3>
+            <p className="text-lg text-slate-600 mb-6">
+              Amethyst International BSIIM Ltd is a multifaceted organization passionately committed to advancing global conferences, exhibitions, and training programs.
             </p>
+            <p className="text-slate-600 mb-8">
+              Through extensive research into socio-economic realities, we unlock latent potential within individuals and organizations, promoting inclusive growth across sectors. We believe work is the foundation of progress and success is achieved through discipline and continuous learning.
+            </p>
+            <div className="bg-slate-50 p-6 border-l-4 border-indigo-600 italic text-slate-700">
+              "We are not just building businesses—we are building people, communities, and nations".
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {coreSpecialties.map((item, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div className="text-indigo-600 mb-4">{item.icon}</div>
+                <h4 className="font-bold mb-2">{item.title}</h4>
+                <p className="text-xs text-slate-500 leading-snug">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center mb-16">
-            {/* Content */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Story</h2>
-                <p className="text-lg text-muted-foreground mb-4">
-                  BSIIM was founded on the belief that strategic consulting should drive real, measurable business transformation. For over 15 years, we've worked with leading organizations across industries to navigate change, optimize operations, and unlock growth.
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  Our team of experienced consultants brings deep industry expertise and a proven track record of delivering results that exceed client expectations.
-                </p>
-              </div>
-            </div>
-
-            {/* Image Placeholder */}
-            <div className="rounded-lg overflow-hidden aspect-square flex items-center justify-center">
-              {/* <div className="text-center space-y-4">
-                <div className="text-6xl">🏢</div>
-                <p className="text-muted-foreground font-medium">Office Photo</p>
-              </div> */}
-              <Image src={aboutBSIIM} alt='Office Space' className='rounded-lg' />
-            </div>
+      {/* The BSIIM Framework Section */}
+      <section className="bg-slate-50 py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h3 className="text-3xl font-bold mb-4">Our Core Models</h3>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            The Business Success Intelligent Initiative Model (BSIIM) is our comprehensive platform for human capacity building and wealth creation.
+          </p>
+        </div>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="bg-white p-8 rounded-3xl shadow-sm">
+            <Target className="text-indigo-600 mb-4" />
+            <h4 className="text-xl font-bold mb-4">ALTI</h4>
+            <p className="text-slate-600 text-sm mb-4">
+              Amethyst Leadership Training Initiative—cultivating visionary leaders who drive socio-economic transformation.
+            </p>
+            <ul className="text-xs text-indigo-600 font-bold space-y-2 uppercase tracking-wider">
+              <li>• Ethics & Integrity</li>
+              <li>• Strategic Innovation</li>
+            </ul>
           </div>
-
-          {/* Mission Section */}
-          <div className="grid gap-8 md:grid-cols-2 mb-16 bg-secondary rounded-lg p-8">
-            <div>
-              <h3 className="text-xl font-bold text-foreground mb-4">Our Mission</h3>
-              <p className="text-muted-foreground">
-                To provide an excellent and the most effective and efficient services and products based on membership using models, program, solutions and the platform. To accelerate business performance, motivates investment and encourage high level circular flow of money through an income program. To empower individuals to become self-reliant through hard-work and leveraging on the available resources in order to enable them to satisfy and exceed their basic necessities (food security, shelter and finances) and to increase productivity. To position the company so that it will solve all problems related to business and provide products and services that will accelerate business turn-over through marketing solution. To support government economic policies through developing human resources (JS- Resource Model), training entrepreneurs to leverage on those managerial skills and technical skills in order to manage other resources for national and global growth.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-foreground mb-4">Our Vision</h3>
-              <p className="text-muted-foreground">
-                To become a global phenomenon in business solution, entrepreneurial solution, empowerment solution, education model, and marketing model (BEEEM) that will stand for a long valued, solid, and strong consistent inspired innovations. That will help individuals and organizations achieve their dreams and goals very easy, fast and really simple. To use our initiated programs/ models/ solutions to raise the level of knowledge, awareness, to increase income level and show citizens how wealth is created through self-development, how companies improve through staff development and pool marketing, which is the major challenge facing our human capital development in Nigeria today. To make sure Members and teams will be sure of full control of themselves, time, income, resources for self-mastery and help them become more discipline, self-reliance, patriotic, and productive to contribute in job creation, financial inclusion, business success, education solution, and be empowered to become entrepreneur, and leaders who can build their nation.
-              </p>
-            </div>
+          <div className="bg-white p-8 rounded-3xl shadow-sm border-2 border-indigo-600">
+            <Globe className="text-indigo-600 mb-4" />
+            <h4 className="text-xl font-bold mb-4">Asset Solutions</h4>
+            <p className="text-slate-600 text-sm mb-4">
+              Enabling property ownership and high-yield investments through creative finance and structured plans.
+            </p>
+            <ul className="text-xs text-indigo-600 font-bold space-y-2 uppercase tracking-wider">
+              <li>• Real Estate Model</li>
+              <li>• Investment ROI</li>
+            </ul>
+          </div>
+          <div className="bg-white p-8 rounded-3xl shadow-sm">
+            <Award className="text-indigo-600 mb-4" />
+            <h4 className="text-xl font-bold mb-4">Career Growth</h4>
+            <p className="text-slate-600 text-sm mb-4">
+              Helping individuals transition to suitable roles while developing essential workplace productivity skills.
+            </p>
+            <ul className="text-xs text-indigo-600 font-bold space-y-2 uppercase tracking-wider">
+              <li>• EdW-Career Model</li>
+              <li>• JS-Resource Model</li>
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-secondary">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground">Our Core Values</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Guiding principles that define how we work
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {values.map((value) => (
-              <Card key={value.title} className="border-border">
-                <CardHeader>
-                  <CardTitle className="text-lg">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <section className="py-20 px-6 max-w-6xl mx-auto text-center">
+        <h3 className="text-3xl font-bold mb-16">Our Core Values</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {values.map((v, i) => (
+            <div key={i}>
+              <h4 className="text-indigo-600 font-black text-4xl mb-2 opacity-20">{i + 1}</h4>
+              <h5 className="font-bold text-xl mb-2 italic underline underline-offset-4 decoration-indigo-400">{v.name}</h5>
+              <p className="text-sm text-slate-500">{v.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Team Section */}
-      {/* <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground">Leadership Team</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Meet our experienced consultants and advisors
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {team.map((member) => (
-              <Card key={member.name} className="border-border overflow-hidden">
-                <div className="bg-muted h-40 flex items-center justify-center">
-                  <span className="text-5xl">👤</span>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-lg">{member.name}</CardTitle>
-                  <p className="text-sm text-accent font-semibold">{member.title}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Stats Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 md:grid-cols-4 text-center">
-            {[
-              { number: '15+', label: 'Years of Experience' },
-              { number: '100+', label: 'Clients Served' },
-              { number: '$200M+', label: 'Value Created' },
-              { number: '100%', label: 'Client Satisfaction' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-4xl font-bold mb-2">{stat.number}</div>
-                <div className="text-primary-foreground/80">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Client Logos Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-secondary">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground">Trusted By Leading Organizations</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              We partner with industry leaders to drive transformational change
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
-            {[
-              'TK Mart',
-              'Tech Innovation Inc',
-              'Auto Dynamics Ltd',
-              'Rial Healthcare Solutions',
-              'Peat Energy Co',
-              'Eko Manufacturing',
-            ].map((company) => (
-              <Card key={company} className="border-border flex items-center justify-center p-8">
-                <p className="font-semibold text-foreground text-center">{company}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold">Ready to Work Together?</h2>
-          <p className="mt-6 text-lg opacity-90 leading-relaxed">
-            Let's discuss how ConsultLab can help you achieve your strategic objectives.
+      {/* Goals & Conclusion */}
+      <section className="bg-indigo-900 py-20 px-6 text-white text-center">
+        <div className="max-w-4xl mx-auto">
+          <Users className="mx-auto mb-6 opacity-50" size={48} />
+          <h3 className="text-3xl md:text-4xl font-bold mb-8 italic">
+            "Empowering individuals through knowledge, leadership, and intelligent investment".
+          </h3>
+          <p className="text-indigo-200 text-lg mb-10 leading-relaxed">
+            By 2030, we aim to build a community of over 100,000 empowered investors and operate in 10 international markets, redefining success for the 21st-century economy.
           </p>
-          <Button asChild className="mt-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90" size="lg">
-            <Link href="/contact">
-              Schedule a Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex justify-center gap-8 border-t border-indigo-800 pt-10">
+            <div>
+              <div className="text-3xl font-bold">50k+</div>
+              <div className="text-xs text-indigo-300 uppercase font-bold tracking-widest">Growth Forecast</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold">100%</div>
+              <div className="text-xs text-indigo-300 uppercase font-bold tracking-widest">Integrity</div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
+
+export default AboutUs;

@@ -6,6 +6,11 @@ import Image from 'next/image'
 import { services, testimonials } from '@/lib/constants'
 import consultantHero from '@/assets/consultant-1.jpg'
 
+export const metadata = {
+  title: 'Home | Amethyst International BSIIM Ltd',
+  description: 'Amethyst International BSIIM Ltd provides strategic consulting solutions, empowerment models, and professional readiness programs to drive sustainable growth.',
+}
+
 export default function Home() {
 
   return (

@@ -10,7 +10,7 @@ export const metadata = {
 }
 
 export default function Services() {
-  
+
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -36,38 +36,37 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`grid gap-8 lg:gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:auto-cols-reverse' : ''
-                }`}
+                className={`grid gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:auto-cols-reverse' : ''
+                  }`}
               >
-              <Card className="border-border text-center">
-                <CardHeader>
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full text-accent-foreground font-bold text-lg mx-auto mb-2">
-                    {service.image}
-                  </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground my-5">{service.description}</p>
-                  <div className="space-y-3">
-                    {/* <h3 className="font-semibold text-foreground">Key Benefits:</h3> */}
-                    {service.benefits.map((benefit) => (
-                      <div key={benefit} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                        <p className="text-foreground">{benefit}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="pt-4">
-                    <Button asChild className="bg-accent hover:bg-accent/90">
-                      <Link href="/contact">
-                        Learn More & Book Consultation
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                <Card className="border-border text-center">
+                  <CardHeader>
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full text-accent-foreground font-bold text-lg mx-auto mb-2">
+                      {service.image}
+                    </div>
+                    <CardTitle className="text-lg">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground my-5">{service.description}</p>
+                    <div className="space-y-3">
+                      {/* <h3 className="font-semibold text-foreground">Key Benefits:</h3> */}
+                      {service.benefits.map((benefit) => (
+                        <div key={benefit} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                          <p className="text-foreground">{benefit}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="pt-4">
+                      <Button asChild className="bg-accent hover:bg-accent/90">
+                        <Link href={service.path}>
+                          Learn More & Book Consultation
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             ))}
           </div>

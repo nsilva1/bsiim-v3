@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react'
 import ReactCountryFlag from "react-country-flag"
 import { upcomingEvents } from '@/data/events'

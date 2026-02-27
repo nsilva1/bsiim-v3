@@ -9,7 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { CheckCircle2 } from 'lucide-react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { toast } from 'sonner'
 
 const exhibitorLink = 'https://paystack.shop/gssicf-exhibitors'

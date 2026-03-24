@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react'
 import ReactCountryFlag from "react-country-flag"
 import { upcomingEvents } from '@/data/events'
@@ -99,14 +99,21 @@ export default function Events() {
                   </div>
 
                   <p className="text-muted-foreground text-sm mb-6">{event.description}</p>
-
+                </CardContent>
+                <CardFooter className='flex justify-between'>
+                  <Button asChild className="bg-black hover:bg-black/90">
+                    <Link href="/events/register">
+                      View Details
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </Button>
                   <Button asChild className="bg-accent hover:bg-accent/90">
                     <Link href="/events/register">
                       Register & RSVP
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </Button>
-                </CardContent>
+                </CardFooter>
               </Card>
             ))}
           </div>

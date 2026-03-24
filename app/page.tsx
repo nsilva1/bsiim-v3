@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight, CheckCircle2, Star } from 'lucide-react'
 import Image from 'next/image'
 import { services, testimonials } from '@/lib/constants'
-import consultantHero from '@/assets/consultant-1.jpg'
+import conferenceHall from '@/assets/conference-hall3.jpg'
 
 export const metadata = {
   title: 'Home | Amethyst International BSIIM Ltd',
@@ -15,61 +15,75 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      
+      {/* Full Width Hero Image */}
+      <div className="w-full relative h-[50vh] min-h-[400px] lg:h-[70vh]">
+        <Image 
+          src={conferenceHall} 
+          alt="Conference Hall Hero Image" 
+          fill 
+          className="object-cover" 
+          priority
+        />
+        {/* <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent"></div> */}
+      </div>
 
-      {/* Hero Section */}
-      <section className="flex-1 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-            {/* Hero Content */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-                  Transform Your Business Today
-                </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Strategic consulting solutions designed to elevate your organization and drive sustainable growth.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
-                  <Link href="/contact">
-                    Book Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/services">
-                    Explore Services
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
-
-              <div className="space-y-3 pt-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-1" />
-                  <p className="text-foreground">Proven expertise across 100+ companies</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-1" />
-                  <p className="text-foreground">Over 15 years of industry experience</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-1" />
-                  <p className="text-foreground">Customized solutions for unique challenges</p>
-                </div>
-              </div>
+      {/* Main Content (Starting below the image) */}
+      <section className="relative w-full -mt-20 sm:-mt-32 px-4 pb-20 sm:px-6 lg:px-8 z-10 flex-1">
+        <div className="mx-auto max-w-5xl bg-background/95 backdrop-blur-sm shadow-xl rounded-2xl md:rounded-3xl p-6 sm:p-10 md:p-14 border border-border/40">
+          <div className="text-center space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground">
+                Transform Your Business Today
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                Strategic consulting solutions designed to elevate your organization and drive sustainable growth.
+              </p>
             </div>
 
-            {/* Hero Image Placeholder */}
-            <div className="rounded-xl overflow-hidden bg-muted aspect-square flex items-center justify-center">
-              {/* <div className="text-center space-y-4">
-                <div className="text-6xl">📊</div>
-                <p className="text-muted-foreground font-medium">Professional Photo</p>
-                <p className="text-sm text-muted-foreground">Replace with your consultant headshot</p>
-              </div> */}
-              <Image src={consultantHero} alt='Consultant Hero' />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 w-full sm:w-auto text-base h-14 px-8 shadow-md transition-all hover:-translate-y-1">
+                <Link href="/contact">
+                  Book Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto text-base h-14 px-8 shadow-sm transition-all hover:-translate-y-1">
+                <Link href="/services">
+                  Explore Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10 border-t border-border/50 mt-10 text-center">
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <CheckCircle2 className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <p className="text-foreground font-semibold">Proven Expertise</p>
+                  <p className="text-sm text-muted-foreground mt-1">Across 100+ companies</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <CheckCircle2 className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <p className="text-foreground font-semibold">15+ Years</p>
+                  <p className="text-sm text-muted-foreground mt-1">Industry leading insights</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <CheckCircle2 className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <p className="text-foreground font-semibold">Custom Solutions</p>
+                  <p className="text-sm text-muted-foreground mt-1">For unique challenges</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
